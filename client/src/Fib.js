@@ -4,7 +4,7 @@ import axios from 'axios';
 class Fib extends Component {
   state = {
     seenIndexes: [],
-    value: {},
+    values: {},
     index: '',
   };
 
@@ -44,7 +44,7 @@ class Fib extends Component {
     for (let key in this.state.values) {
       entries.push(
         <div key={key}>
-          For index {key} I calculated {this.state.values[{ key }]}
+          For index {key} I calculated {this.state.values[key]}
         </div>
       );
     }
@@ -63,10 +63,11 @@ class Fib extends Component {
           />
           <button>Submit</button>
         </form>
+
         <h3>Indexes I have seen:</h3>
         {this.renderSeenIndexes()}
 
-        <h3>Calculate Values</h3>
+        <h3>Calculated Values:</h3>
         {this.renderValues()}
       </div>
     );
